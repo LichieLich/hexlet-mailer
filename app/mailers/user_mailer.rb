@@ -8,13 +8,11 @@ class UserMailer < ApplicationMailer
   #
   def account_activation
     # BEGIN
-    def account_activation
-      @user = params[:user]
-      @user_name = @user.name
-      @confirmation_token = params[:confirmation_token]
+    @user = params[:user]
+    @user_name = @user.name
+    @confirmation_token = params[:confirmation_token]
 
-      mail(to: @user.email, subject: t('.subject'))
-    end
+    mail(to: @user.email, subject: t('.subject'))
     # END
   end
 end
