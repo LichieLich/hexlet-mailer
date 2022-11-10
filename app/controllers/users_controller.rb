@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       # BEGIN
       UserMailer.with(
         user: @user,
-        confirmation_token: @user.generate_confirmation_token
+        confirmation_token: @user.confirmation_token
       ).account_activation.deliver_now
       # END
 
